@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="JS.css">
+</head>
+
+<script>
+    // clock
+    function rclock() {
+        document.getElementById("clock").style.fontFamily = 'Georgia';
+        document.getElementById("clock").style.fontSize = '30px';
+        document.getElementById("clock").style.color = 'rgb(140, 0, 255)';
+        document.getElementById("clock").style.textShadow = '2px 2px blue'
+
+
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+        var session = "AM";
+
+        if (h == 0) {
+            h = 12;
+        }
+
+        if (h > 12) {
+            h = h - 12;
+            session = "PM";
+        }
+
+        if (h < 10) { h = '0' + h; }
+        if (m < 10) { m = '0' + m; }
+        if (s < 10) { s = '0' + s; }
+
+        document.getElementById("clock").innerHTML = h + ":" + m + ":" + s + " " + session
+        ref();
+    }
+    function ref() {
+        var r = 1000;
+        myt = setTimeout('rclock()', r);
+    }
+
+    // multiplication table
+    function mult() {
+        var h = document.getElementById("num1").value;
+        var f = 2;
+        for (var a = 2; a <= h / 2; a++) {
+            if (h % a == 0) {
+                f = f + 1;
+            }
+        }
+        document.getElementById("p").innerHTML = "# of factors: " + f + "<br>";
+        if (f == 2) { document.getElementById('p').innerHTML += h + " is a prime number"; }
+        else { document.getElementById('p').innerHTML += h + " is a composite number"; }
+    }
+
+    // generating random color for webpage
+    function colorGen() {
+        // alert(r);
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        document.getElementById("color1").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+    }
+
+    // important quotes by famous Indian people
+    function change() {
+        var b = document.getElementById("bquote").value;
+        // alert(b)
+        if (b == 'text1') {
+            document.getElementById("bquote").value = 'text2';
+            document.getElementById("bquote").innerHTML = "An Inspirational Quote by Azad";
+            document.getElementById("importantquotes").src = "/Users/Manya/Desktop/WebDev/Images/Gandhi.png";
+
+        }
+        else if (b == 'text2') {
+            document.getElementById("bquote").value = 'text3';
+            document.getElementById("bquote").innerHTML = "A Motivational Quote by Azad";
+            document.getElementById("importantquotes").src = "/Users/Manya/Desktop/WebDev/Images/Azad.png";
+
+        }
+        else if (b == 'text3') {
+            document.getElementById("bquote").value = 'text4';
+            document.getElementById("bquote").innerHTML = "An Empowering Quote by Vivekananda";
+            document.getElementById("importantquotes").src = "/Users/Manya/Desktop/WebDev/Images/Azad2.png";
+
+        }
+        else if (b == 'text4') {
+            document.getElementById("bquote").value = 'text1';
+            document.getElementById("bquote").innerHTML = "An Energizing Quote by Gandhi";
+            document.getElementById("importantquotes").src = "/Users/Manya/Desktop/WebDev/Images/Vivekananda.png";
+        }
+    }
+    // multiplication table 1
+    function multi() {
+        var n = document.getElementById("num2").value
+        // alert(n);
+        document.getElementById("t").innerHTML = "";
+        for (var a = 1; a <= 12; a++) {
+            y = n * a;
+            // alert(y);
+            document.getElementById("t").innerHTML += n + "x" + a + '=' + y + "<br>";
+        }
+    }
+
+</script>
+
+<header>
+    <div id="logo">
+        <p style="font-size: 35px;"><b>Manyada Alapaty</p></b>
+    </div>
+    <nav>
+        <a target="newtab" href="/Users/Manya/Desktop/WebDev/Portfolio/Index.html">Home</a>
+        <a target="newtab" href="/Users/Manya/Desktop/WebDev/Portfolio/Intro.html">About Me</a>
+        <a target="newtab" href="/Users/Manya/Desktop/WebDev/Portfolio/Hobby.html">Hobbies</a>
+        <a href="#">Milestones</a>
+        <a target="newtab" href="/Users/Manya/Desktop/WebDev/Portfolio/Travel Diaries.html">Travel Diaries</a>
+        <a target="newtab" href="/Users/Manya/Desktop/WebDev/Portfolio/Blog.html">My Blog</a>
+        <a target="newtab" href="/Users/Manya/Desktop/WebDev/Portfolio/JS Projects.html">JS Projects</a>
+    </nav>
+</header>
+
+<body onload="rclock()" id="color1">
+
+    <main id="test" style="padding-top: 10px; padding-bottom: 10px;">
+        <script style="margin-left: 30px; font-size: 20px; font-family: Dancing Script;">
+
+            function fontsize14() {
+                document.getElementById("ptag").style.fontSize = "14px"
+            }
+            function fontsize18() {
+                document.getElementById("ptag").style.fontSize = "18px"
+            }
+            function change3() {
+                alert(document.getElementById('fontsize').value);
+                s = (document.getElementById('fontsize').value);
+                document.getElementById('test').style.fontSize = s + 'px';
+            }
+            function change4() {
+                alert(document.getElementById('fontcol').value);
+                color = (document.getElementById('fontcol').value);
+                document.getElementById('test').style.color = color;
+            }
+            function change5() {
+                alert(document.getElementById('fontfam').value);
+                fontFamily = (document.getElementById('fontfam').value);
+                document.getElementById('test').style.fontFamily = fontFamily;
+            }
+        </script>
+
+        <div class="row">
+
+            <div class="project">
+                <h3>Real-time clock</h3>
+                <p id="clock"></p>
+            </div>
+            <div class="project">
+                <h4>Prime vs. composite #s</h4>
+                <label for="num1">Enter any natural number:</label>
+                <br>
+                <input type="text" id="num1">
+                <button id="b1" value="submit" onclick="mult()">Bhargavi</button>
+                <p id="p"></p>
+            </div>
+            <div class="project">
+                <h4>Color spin!</h4>
+                <label for="btn">Click on the button to change the background color of the webpage (randomly!)</label>
+                <br>
+                <button id="btn" onclick="colorGen()">Bhargavi</button>
+            </div>
+            <div class="project">
+                <h5
+                    style="margin-left: 12px; margin-bottom: 10px;">
+                    Click on the button to change the
+                    important quote said by famous Indian leaders.</h5>
+                <button style="margin-left: 20px;" id="bquote" value="text1" onclick="change()">An Energizing Quote by
+                    Gandhi</button>
+                <br>
+                <br>
+                <img style="float: left;" id="importantquotes" src="/Users/Manya/Desktop/WebDev/Images/Vivekananda.png" width="260px"
+                    height="auto">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="projectmult">
+                <h4>Multiplication table</h4>
+                <br>
+                <label for="num2">Enter any number</label>
+                <input type="text" id="num2">
+                <button id="b1" value="submit" onclick="multi()">Bhargavi</button>
+                <p id="t"></p>
+            </div>   
+
+        </div>
+        
+
+        <div class="row">
+
+            <div class="project1">
+
+                <body>
+                    <h3>Drawing on Canvas</h3>
+                    <h4>Happy and Sad Faces</h4>
+                    <canvas id="c1" height="400" width="680" style="border: 10px double rgb(5, 10, 83); background-color: rgb(253, 235, 204);"></canvas>
+                    <script>
+                        var canvas=document.getElementById("c1");
+                        var smilefrown=canvas.getContext("2d");
+                        
+                        // Smiley
+                
+                        // Face
+                        smilefrown.beginPath();
+                        smilefrown.arc(200,200,100,0,2*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Left eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(150,175,15,0,2*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Right eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(250,175,15,0,2*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Smile
+                        smilefrown.beginPath();
+                        smilefrown.arc(200,225,50,0,1*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Eye color - left eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(150,175,5,0,2*Math.PI);
+                        smilefrown.fillStyle="black";
+                        smilefrown.fill();
+                        smilefrown.stroke();
+                
+                        // Eye color - Right eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(250,175,5,0,2*Math.PI);
+                        smilefrown.fillStyle="black";
+                        smilefrown.fill();
+                        smilefrown.stroke();
+                
+                        // Frowny
+                
+                        // Face
+                        smilefrown.beginPath();
+                        smilefrown.arc(500,200,100,0,2*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Left eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(450,175,15,0,2*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Right eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(550,175,15,0,2*Math.PI);
+                        smilefrown.stroke();
+                
+                        // Frown
+                        smilefrown.beginPath();
+                        smilefrown.arc(500,260,50,0,1*Math.PI,true);
+                        smilefrown.stroke();
+                
+                        // Eye color - left eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(450,175,5,0,2*Math.PI);
+                        smilefrown.fillStyle="black";
+                        smilefrown.fill();
+                        smilefrown.stroke();
+                
+                        // Eye color - Right eye
+                        smilefrown.beginPath();
+                        smilefrown.arc(550,175,5,0,2*Math.PI);
+                        smilefrown.fillStyle="black";
+                        smilefrown.fill();
+                        smilefrown.stroke();
+                
+                    </script>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="project1">
+                <canvas id="greeting" height="350" width="1000"
+                    style="border: 10px double rgb(255, 0, 0); background-color: rgb(219, 215, 215);"></canvas>
+
+                <script>
+                    // christmas greeting card
+                    var c = document.getElementById("greeting");
+                    var pen = c.getContext('2d');
+                    var img1 = new Image();
+                    img1.onload = start;
+                    img1.onerror = function () { alert(img1.src + "unable to load") };
+                    img1.src = "/Users/Manya/Desktop/WebDev/Images/Christmas image2.jpeg";
+                    function start() {
+                        pen.drawImage(img1, 45, 45, 400, 250);
+                    }
+                    pen.fillStyle = "red";
+                    pen.font = "90px 'Orange Juice'";
+                    pen.fillText("Merry", 600, 150);
+                    pen.fillText("Christmas!!", 520, 250);
+
+                </script>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="project1">
+
+                <canvas id="hnygreeting" height="500" width="1000"
+                    style="border: 10px double rgb(12, 6, 102); background-color: rgb(160, 204, 224);"></canvas>
+
+                <script>
+                    // new year's 2022 greeting card
+                    var hny = document.getElementById("hnygreeting");
+                    var ny = hny.getContext('2d');
+                    var img2 = new Image();
+                    img2.onload = start;
+                    img2.onerror = function () { alert(img2.src + "unable to load") };
+                    img2.src = "/Users/Manya/Desktop/WebDev/Images/Happy2022.jpeg";
+                    function start() {
+                        ny.drawImage(img2, 30, 45, 600, 400);
+                    }
+                    ny.fillStyle = "navyblue";
+                    ny.font = "75px 'Dancing Script'";
+                    ny.fillText("  Happy   ", 665, 150);
+                    ny.fillText("New Year! ", 655, 250);
+                    ny.fillText("It's 2022!", 665, 400);
+
+                </script>
+
+            </div>
+        </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+<footer>
+    <div>
+        <nav>
+            <a target="newtab" href="mailto:manyada@gmail.com/"><i class="fa fa-address-card"
+                    style="font-size: 24px;"></i>Email Me!</a>
+            <a target="newtab" href="https://www.facebook.com/"><i class="fa fa-facebook-square"
+                    style="font-size: 24px;"></i>FaceBook</a>
+            <a target="newtab" href="https://www.instagram.com/"><i class="fa fa-instagram"></i>Instagram</a>
+            <a target="newtab" href="https://www.youtube.com/"><i class="fa fa-youtube-square"
+                    style="font-size: 24px;"></i>YouTube</a>
+            <a target="newtab" href="https://www.snapchat.com/"><i class="fa fa-snapchat-square"
+                    style="font-size: 24px;"></i>SnapChat</a>
+
+        </nav>
+    </div>
+</footer>
+
+</html>

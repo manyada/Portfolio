@@ -1,0 +1,90 @@
+.row{
+    max-height: 400px;
+    /* float: left; */
+    width: auto;
+}
+.project{
+    max-height: 400px;
+    height: 300px;
+    width: 260px;
+    border: 2px solid rgb(24, 24, 112);
+    padding: 20px;
+    float: left;
+    margin: 2px;
+    font-size: x-large;
+}
+.projectmult{
+    max-height: 800px;
+    height: 550px;
+    width: 260px;
+    border: 2px solid rgb(24, 24, 112);
+    padding: 20px;
+    float: left;
+    margin: 2px;
+    font-size: x-large;
+}
+.project1{
+    max-height: 550px;
+    padding: 20px;
+    float: left;
+    margin: 2px;
+    font-size: x-large;
+
+}
+header{
+    width: 97.4%;
+    height: 20%;
+    background-color: rgb(6, 13, 110); 
+    font-family: 'Cambria';
+    display: flex;
+    font-size: 40px;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 10vh;
+}
+main{
+    height: 60%;
+    font-size: 40px;
+    min-height: 80vh;
+}
+footer{
+    width: 100.4%;
+    height: 20%;
+    background-color: rgb(101, 121, 221);
+    font-family: 'Dancing Script', cursive;
+    min-height: 10vh;
+    display: grid;
+    place-items: center;
+}
+#logo{
+    /* width: 30%;
+    height: 20%; */
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    box-shadow: 1px 2px 10px rgb(0, 153, 255);
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid rgb(84, 3, 131);
+    color: rgb(140, 0, 255);
+}
+nav{
+    display: inline-block;
+    padding: 25px;
+    font-size: 20px;
+}
+nav a{
+    font-size: 32px;
+    display: inline;
+    font-family: 'Cookie', cursive;
+    color:rgb(255, 251, 0);
+    margin: 15px;
+    text-decoration: none;
+}
+nav a:hover{
+    color: rgb(0, 255, 221);
+    font-size: 35px;
+}
+
+
+
