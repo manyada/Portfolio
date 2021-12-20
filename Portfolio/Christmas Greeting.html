@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas Greeting Card</title>
+    <link rel="stylesheet" href="/Users/Manya/Desktop/WebDev/Portfolio/Template.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <canvas id="greeting" height="500" width="1000" style="border: 10px double rgb(255, 0, 0); background-color: rgb(219, 215, 215);"></canvas>
+
+    <script>
+        var c=document.getElementById("greeting");
+        var b=c.getContext('2d');
+        var img=new Image();
+        img.onload=start;
+        img.onerror=function(){alert(img.src+"unable to load")};
+        img.src="/Users/Manya/Desktop/WebDev/Images/Christmas tree1.jpeg";
+        function start(){
+            b.drawImage(img,20,20,450,450);
+        }
+        b.fillStyle="red";
+        b.font="90px 'Dancing Script'";
+        b.fillText("Merry",520,200);
+        b.fillText("Christmas!!",520,300);
+    </script>
+</body>
+</html>

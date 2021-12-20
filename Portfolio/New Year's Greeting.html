@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2022 Greeting Card</title>
+    <link rel="stylesheet" href="/Users/Manya/Desktop/WebDev/Portfolio/Template.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <canvas id="hnygreeting" height="500" width="1200" style="border: 10px double rgb(12, 6, 102); background-color: rgb(219, 215, 215);"></canvas>
+
+    <script>
+        var hny=document.getElementById("hnygreeting");
+        var ny=hny.getContext('2d');
+        var img=new Image();
+        img.onload=start;
+        img.onerror=function(){alert(img.src+"unable to load")};
+        img.src="/Users/Manya/Desktop/WebDev/Images/Happy2022.jpeg";
+        function start(){
+            ny.drawImage(img,45,45,600,400);
+        }
+        ny.fillStyle="navyblue";
+        ny.font="90px 'Dancing Script'";
+        ny.fillText("Happy",730,200);
+        ny.fillText("New Year!",730,300);
+        ny.fillText("It's 2022!",730,400);
+    </script>
+</body>
+</html>
